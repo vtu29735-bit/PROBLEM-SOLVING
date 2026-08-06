@@ -1,0 +1,19 @@
+class Solution {
+    public int[] runningSum(int[] nums) {
+        // We can modify the array in-place to save space
+        for (int i = 1; i < nums.length; i++) {
+            // Each element at index i becomes the sum of itself and the previous running sum
+            nums[i] += nums[i - 1];
+        }
+        return nums;
+    }
+}
+output:
+nums =
+[3,1,2,10,1]
+
+
+
+
+
+
