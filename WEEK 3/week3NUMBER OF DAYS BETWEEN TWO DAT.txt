@@ -1,0 +1,25 @@
+week3:NUMBER OF DAYS BETWEEN TWO DATES
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+
+public class Solution {
+    public int daysBetweenDates(String date1, String date2) {
+        // Define the date format used in the problem (YYYY-MM-DD)
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        
+        // Parse both dates into LocalDate objects
+        LocalDate d1 = LocalDate.parse(date1, formatter);
+        LocalDate d2 = LocalDate.parse(date2, formatter);
+        
+        // Calculate the difference in days using ChronoUnit
+        return (int) Math.abs(ChronoUnit.DAYS.between(d1, d2));
+    }
+}
+OUTPUT:
+Case 1
+
+date1 =
+"2019-06-29"
+date2 =
+"2019-06-30"
