@@ -20,9 +20,8 @@ class Solution {
 
 
 
-&#x20;       return maxSum;
-
-&#x20;   }
+&#x20;       return maxSum; 
+}
 
 }
 
