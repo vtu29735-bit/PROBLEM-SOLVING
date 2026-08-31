@@ -1,0 +1,53 @@
+Program:
+import java.util.Scanner;
+
+public class ConstraintDrivenSolution {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        System.out.println("Enter elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.print("Enter target sum: ");
+        int target = sc.nextInt();
+
+        boolean found = false;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+
+                if (arr[i] + arr[j] == target) {
+                    System.out.println(
+                        "Pair found: " + arr[i] + " + " + arr[j] +
+                        " = " + target
+                    );
+                    found = true;
+                }
+            }
+        }
+
+        if (!found) {
+            System.out.println("No pair found.");
+        }
+    }
+output:
+Enter number of elements: 5
+Enter elements:
+2
+7
+11
+15
+3
+Enter target sum: 10
+
+Pair found: 7 + 3 = 10
+
+}
