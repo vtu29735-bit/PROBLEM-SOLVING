@@ -1,0 +1,55 @@
+program:
+import java.util.Scanner;
+
+public class SuperMarketBilling {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of items: ");
+        int n = sc.nextInt();
+
+        double total = 0;
+
+        for (int i = 1; i <= n; i++) {
+            System.out.print("Enter price of item " + i + ": ");
+            double price = sc.nextDouble();
+
+            System.out.print("Enter quantity: ");
+            int quantity = sc.nextInt();
+
+            total += price * quantity;
+        }
+
+        double discount = 0;
+
+        if (total >= 5000) {
+            discount = total * 0.10;
+        } else if (total >= 2000) {
+            discount = total * 0.05;
+        }
+
+        double finalAmount = total - discount;
+
+        System.out.println("\n----- BILL -----");
+        System.out.println("Total Amount : Rs." + total);
+        System.out.println("Discount     : Rs." + discount);
+        System.out.println("Final Amount : Rs." + finalAmount);
+    }
+}
+output:
+Enter number of items: 3
+
+Enter price of item 1: 500
+Enter quantity: 2
+
+Enter price of item 2: 1000
+Enter quantity: 1
+
+Enter price of item 3: 200
+Enter quantity: 3
+
+----- BILL -----
+Total Amount : Rs.2600.0
+Discount     : Rs.130.0
+Final Amount : Rs.2470.0
+
