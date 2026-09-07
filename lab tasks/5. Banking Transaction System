@@ -1,0 +1,39 @@
+program:
+import java.util.Scanner;
+
+public class BankingSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double balance = 10000;
+
+        System.out.println("Initial Balance: " + balance);
+
+        System.out.print("Enter deposit amount: ");
+        double deposit = sc.nextDouble();
+
+        balance += deposit;
+
+        System.out.println("After Deposit: " + balance);
+
+        System.out.print("Enter withdrawal amount: ");
+        double withdraw = sc.nextDouble();
+
+        if (withdraw <= balance) {
+            balance -= withdraw;
+            System.out.println("Withdrawal successful.");
+        } else {
+            System.out.println("Insufficient balance.");
+        }
+
+        System.out.println("Final Balance: " + balance);
+    }
+}
+output:
+Initial Balance: 10000.0
+Enter deposit amount: 5000
+After Deposit: 15000.0
+Enter withdrawal amount: 3000
+Withdrawal successful.
+Final Balance: 12000.0
+
