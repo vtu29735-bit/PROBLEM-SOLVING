@@ -1,0 +1,43 @@
+program:
+class Calculator {
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int subtract(int a, int b) {
+        return a - b;
+    }
+
+    int multiply(int a, int b) {
+        return a * b;
+    }
+
+    int divide(int a, int b) {
+        return a / b;
+    }
+}
+
+public class CalculatorTest {
+    public static void main(String[] args) {
+
+        Calculator c = new Calculator();
+
+        System.out.println("Addition Test: " +
+                (c.add(10, 5) == 15 ? "PASS" : "FAIL"));
+
+        System.out.println("Subtraction Test: " +
+                (c.subtract(10, 5) == 5 ? "PASS" : "FAIL"));
+
+        System.out.println("Multiplication Test: " +
+                (c.multiply(10, 5) == 50 ? "PASS" : "FAIL"));
+
+        System.out.println("Division Test: " +
+                (c.divide(10, 5) == 2 ? "PASS" : "FAIL"));
+    }
+}
+output:
+Addition Test: PASS
+Subtraction Test: PASS
+Multiplication Test: PASS
+Division Test: PASS
