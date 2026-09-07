@@ -1,0 +1,25 @@
+program:import java.util.Scanner;
+
+public class RideSharing {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter distance in km: ");
+        double distance = sc.nextDouble();
+
+        double baseFare = 50;
+        double costPerKm = 15;
+
+        double fare = baseFare + (distance * costPerKm);
+
+        System.out.println("Distance: " + distance + " km");
+        System.out.println("Base Fare: Rs." + baseFare);
+        System.out.println("Total Fare: Rs." + fare);
+    }
+}
+output:
+
+Enter distance in km: 10
+Distance: 10.0 km
+Base Fare: Rs.50.0
+Total Fare: Rs.200.0
