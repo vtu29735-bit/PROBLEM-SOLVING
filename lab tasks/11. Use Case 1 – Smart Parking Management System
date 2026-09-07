@@ -1,0 +1,87 @@
+program:
+import java.util.Scanner;
+
+public class SmartParking {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int totalSlots = 5;
+        int occupied = 0;
+
+        while (true) {
+            System.out.println("\n--- Smart Parking System ---");
+            System.out.println("1. Park Vehicle");
+            System.out.println("2. Remove Vehicle");
+            System.out.println("3. Show Available Slots");
+            System.out.println("4. Exit");
+
+            System.out.print("Enter choice: ");
+            int choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                    if (occupied < totalSlots) {
+                        occupied++;
+                        System.out.println("Vehicle parked successfully.");
+                    } else {
+                        System.out.println("Parking Full.");
+                    }
+                    break;
+
+                case 2:
+                    if (occupied > 0) {
+                        occupied--;
+                        System.out.println("Vehicle removed successfully.");
+                    } else {
+                        System.out.println("Parking is empty.");
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("Available Slots: " +
+                            (totalSlots - occupied));
+                    break;
+
+                case 4:
+                    System.out.println("Thank you!");
+                    return;
+
+                default:
+                    System.out.println("Invalid choice.");
+            }
+        }
+    }
+}
+output:
+--- Smart Parking System ---
+1. Park Vehicle
+2. Remove Vehicle
+3. Show Available Slots
+4. Exit
+Enter choice: 1
+Vehicle parked successfully.
+
+--- Smart Parking System ---
+1. Park Vehicle
+2. Remove Vehicle
+3. Show Available Slots
+4. Exit
+Enter choice: 1
+Vehicle parked successfully.
+
+--- Smart Parking System ---
+1. Park Vehicle
+2. Remove Vehicle
+3. Show Available Slots
+4. Exit
+Enter choice: 3
+Available Slots: 3
+
+--- Smart Parking System ---
+1. Park Vehicle
+2. Remove Vehicle
+3. Show Available Slots
+4. Exit
+Enter choice: 4
+Thank you!
+
