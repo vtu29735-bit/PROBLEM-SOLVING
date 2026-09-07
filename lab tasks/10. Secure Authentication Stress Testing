@@ -1,0 +1,58 @@
+program:
+import java.util.Scanner;
+
+public class AuthenticationTest {
+
+    static boolean login(String username, String password) {
+        return username.equals("admin") &&
+               password.equals("12345");
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of login attempts: ");
+        int n = sc.nextInt();
+
+        int success = 0;
+        int failure = 0;
+
+        for (int i = 1; i <= n; i++) {
+            System.out.print("Enter username: ");
+            String username = sc.next();
+
+            System.out.print("Enter password: ");
+            String password = sc.next();
+
+            if (login(username, password)) {
+                System.out.println("Login Successful");
+                success++;
+            } else {
+                System.out.println("Login Failed");
+                failure++;
+            }
+        }
+
+        System.out.println("\nAuthentication Test Results");
+        System.out.println("Successful Attempts: " + success);
+        System.out.println("Failed Attempts: " + failure);
+    }
+}
+output:
+Enter number of login attempts: 3
+
+Enter username: admin
+Enter password: 12345
+Login Successful
+
+Enter username: user
+Enter password: 1111
+Login Failed
+
+Enter username: admin
+Enter password: 12345
+Login Successful
+
+Authentication Test Results
+Successful Attempts: 2
+Failed Attempts: 1
