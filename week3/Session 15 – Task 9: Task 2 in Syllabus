@@ -1,0 +1,27 @@
+PROGRAM:
+class Student {
+}
+
+class Rockstar {
+}
+
+class Hacker {
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        Student s = new Student();
+        Rockstar r = new Rockstar();
+        Hacker h = new Hacker();
+
+        System.out.println(s instanceof Student);
+        System.out.println(r instanceof Rockstar);
+        System.out.println(h instanceof Hacker);
+    }
+}
+OUTPUT:
+true
+true
+true
