@@ -1,0 +1,84 @@
+PROGRAM:
+import java.util.*;
+
+interface Payment {
+    double getFee();
+    String getName();
+}
+
+class CreditCardPayment implements Payment {
+    public double getFee() {
+        return 0.02;
+    }
+
+    public String getName() {
+        return "CreditCard";
+    }
+}
+
+class UPIPayment implements Payment {
+    public double getFee() {
+        return 0.01;
+    }
+
+    public String getName() {
+        return "UPI";
+    }
+}
+
+class NetBankingPayment implements Payment {
+    public double getFee() {
+        return 0.015;
+    }
+
+    public String getName() {
+        return "NetBanking";
+    }
+}
+
+abstract class PaymentProcessor {
+    abstract double processPayment(Payment p, double amount);
+}
+
+class OnlinePaymentProcessor extends PaymentProcessor {
+    double processPayment(Payment p, double amount) {
+        return amount + amount * p.getFee();
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        PaymentProcessor processor =
+                new OnlinePaymentProcessor();
+
+        for (int i = 0; i < n; i++) {
+            int type = sc.nextInt();
+            double amount = sc.nextDouble();
+
+            Payment p;
+
+            if (type == 1) {
+                p = new CreditCardPayment();
+            } else if (type == 2) {
+                p = new UPIPayment();
+            } else {
+                p = new NetBankingPayment();
+            }
+
+            double total = processor.processPayment(p, amount);
+
+            System.out.printf("%s %.2f%n",
+                    p.getName(), total);
+        }
+
+        sc.close();
+    }
+}
+OUTPUT:
+CreditCard 1020.00
+UPI 2020.00
+NetBanking 5075.00
