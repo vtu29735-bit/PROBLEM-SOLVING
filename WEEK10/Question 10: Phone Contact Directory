@@ -1,0 +1,20 @@
+PROGRAM:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> contacts = new HashMap<>();
+
+        contacts.put("Ravi", "9876543210");
+        contacts.put("Priya", "9123456780");
+
+        System.out.println("Priya: " + contacts.get("Priya"));
+
+        contacts.put("Priya", "9988776655");
+
+        System.out.println("Updated Priya: " + contacts.get("Priya"));
+    }
+}
+OUTPUT:
+Priya: 9123456780
+Updated Priya: 9988776655
