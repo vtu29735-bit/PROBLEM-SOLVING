@@ -1,0 +1,32 @@
+PROGRAM:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> marks = new ArrayList<>();
+
+        int n = sc.nextInt();
+        int sum = 0, highest = Integer.MIN_VALUE;
+
+        for (int i = 0; i < n; i++) {
+            int mark = sc.nextInt();
+            marks.add(mark);
+            sum += mark;
+
+            if (mark > highest) {
+                highest = mark;
+            }
+        }
+
+        System.out.println("Marks: " + marks);
+        System.out.println("Highest: " + highest);
+        System.out.printf("Average: %.2f%n", (double) sum / n);
+
+        sc.close();
+    }
+}
+OUTPUT
+Marks: [80, 75, 90, 65, 85]
+Highest: 90
+Average: 79.00
