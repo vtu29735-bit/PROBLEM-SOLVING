@@ -1,0 +1,22 @@
+PROGRAM:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<Integer, Integer> marks = new HashMap<>();
+
+        marks.put(101, 85);
+        marks.put(102, 90);
+        marks.put(103, 75);
+
+        int rollNumber = 102;
+
+        if (marks.containsKey(rollNumber)) {
+            System.out.println("Marks: " + marks.get(rollNumber));
+        } else {
+            System.out.println("Student not found");
+        }
+    }
+}
+OUTPUT:
+Marks: 90
