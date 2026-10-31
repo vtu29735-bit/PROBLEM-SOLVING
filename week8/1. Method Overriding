@@ -1,0 +1,22 @@
+PROGRAM:
+class Animal {
+    void display() {
+        System.out.println("Animal");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void display() {
+        System.out.println("Dog");
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) {
+        Animal a = new Dog();
+        a.display();
+    }
+}
+Output:
+Dog
