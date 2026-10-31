@@ -1,0 +1,18 @@
+PROGRAM:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> student1 = new ArrayList<>(
+            Arrays.asList("Java", "Maths", "DBMS", "Networks"));
+
+        ArrayList<String> student2 = new ArrayList<>(
+            Arrays.asList("Java", "DBMS", "Python"));
+
+        student1.retainAll(student2);
+
+        System.out.println("Common subjects: " + student1);
+    }
+}
+OUTPUT:
+Common subjects: [Java, DBMS]
