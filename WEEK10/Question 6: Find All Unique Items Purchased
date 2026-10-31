@@ -1,0 +1,17 @@
+PROGRAM:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedHashSet<String> items = new LinkedHashSet<>();
+
+        items.add("Milk");
+        items.add("Bread");
+        items.add("Milk");
+        items.add("Eggs");
+        items.add("Bread");
+
+        System.out.println(items);
+    }
+}
+OUTPUT:[65, 75, 80, 90]
